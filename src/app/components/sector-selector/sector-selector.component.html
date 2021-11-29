@@ -1,0 +1,8 @@
+<div [formGroup]="form">
+  <select multiple size="5" formControlName="sectors" required>
+    <option [value]="classifier.code"
+            *ngFor="let classifier of classifiers"
+            [style]="classifier.hasChild ? 'font-weight:bolder; color:black;' : null"
+            [disabled]="classifier.hasChild">{{replaceSpaces(classifier.name)}}</option>
+  </select>
+</div>
